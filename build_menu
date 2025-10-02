@@ -3,7 +3,7 @@
 set -e  # Exit on error
 
 # Variables
-export MENU_VERSION="-Jollyk OneUI 7.0"
+export MENU_VERSION="-kebab OneUI 7.0"
 export DIR="$(readlink -f .)"
 export OUT_DIR="$DIR/out"
 export PARENT_DIR="$(readlink -f "$DIR/..")"
@@ -88,7 +88,7 @@ build_kernel() {
   echo "${BOLD_GREEN}***** Compiling kernel *****${RESET}"
   mkdir -p "$OUT_DIR"
 
-  make -j12 -C "$(pwd)" $KERNEL_MAKE_ENV "exynos2200_${VARIANT}_defconfig" "JollyKernel.config" dtbs
+  make -j12 -C "$(pwd)" $KERNEL_MAKE_ENV "exynos2200_${VARIANT}_defconfig" "kebabKernel.config" dtbs
   make -j12 -C "$(pwd)" $KERNEL_MAKE_ENV
 
   # Generate dtbo and dtb
